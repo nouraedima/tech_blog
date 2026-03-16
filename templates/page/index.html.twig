@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil - TECH_BLOG{% endblock %}
+
+{% block body %}
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+body { font-family: 'DM Sans', sans-serif; background: #0e0e10; color: #f0ede8; margin: 0; }
+
+.hero { padding: 5rem 2rem 3rem; max-width: 900px; }
+.hero-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7c6aff; margin-bottom: 1rem; }
+.hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: #f0ede8; }
+.hero h1 em { font-style: italic; color: #a39aff; font-weight: 400; }
+.hero p { color: #888; font-size: 1.0625rem; max-width: 480px; line-height: 1.7; }
+
+.divider { height: 0.5px; background: #2a2a2e; margin: 0 2rem; }
+
+.articles-section { padding: 3rem 2rem; }
+.section-title { font-family: 'Syne', sans-serif; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; color: #555; margin-bottom: 2rem; }
+
+.empty-state { background: #17171a; border: 0.5px dashed #2a2a2e; border-radius: 12px; padding: 3rem; text-align: center; color: #444; font-size: 0.9375rem; }
+.empty-state span { display: block; font-size: 2rem; margin-bottom: 1rem; }
+
+</style>
+
+<div class="hero">
+    <div class="hero-label">Bienvenue sur le blog</div>
+    <h1>Tout sur la <em>tech,</em><br>par des passionnés.</h1>
+    <p>Articles sur le développement web, l'administration serveur et le matériel informatique.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="articles-section">
+    <div class="section-title">Articles récents</div>
+    <div class="empty-state">
+        <span>soon</span>
+        Les articles arrivent bientôt...
+    </div>
+</div>
+
+<div class="articles-section">
+    <div class="section-title">Articles récents</div>
+    {% if posts is empty %}
+        <div class="empty-state">
+            <span>soon</span>
+            Les articles arrivent bientôt...
+        </div>
+    {% else %}
+        <div class="posts-list">
+            {% for post in posts %}
+                <article style="margin-bottom: 1rem; background:#121214; padding:1rem; border-radius:10px; border:1px solid #2a2a2e;">
+                    <h3 style="margin:0; font-size:1.15rem;">{{ post.title }}</h3>
+                    <a href="{{ path('app_post_show', {'id': post.id}) }}" style="display:inline-block; margin-top:.5rem; background:#635bff; color:#fff; border:none; padding:.35rem .7rem; border-radius:6px; text-decoration:none; font-size:.9rem;">Voir les détails</a>
+                </article>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -11,7 +11,19 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <footer>
+    <header>
+    <img src="{{asset('images/logo-tech-trendz.png')}}" alt="Logo" width="150" color="#090808">
+    <nav>
+        <ul>
+            <li><a href="{{ path('app_home') }}">Accueil</a></li>
+            <li><a href="{{ path('app_about') }}">About</a></li>
+            </ul>
+    </nav>
+</header>   
         {% block body %}{% endblock %}
-    </body>
+    <footer>
+        <p>&copy; 2026 TechBlog. All rights reserved. NOURA</p>
+    </footer>
+</body>
 </html>

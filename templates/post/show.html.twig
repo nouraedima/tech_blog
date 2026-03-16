@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }} - TECH_BLOG{% endblock %}
+
+{% block body %}
+    <div style="padding:2rem; color:#f0ede8; background:#0f0f13; border-radius:10px; margin-bottom:1.5rem;">
+        <h1>{{ post.title }}</h1>
+        <p>Post #{{ post.id }}</p>
+    </div>
+
+    {% for message in app.flashes('success') %}
+        <div style="padding: .6rem 1rem; margin-bottom:1rem; background:#2f7a3b; color:#fff; border-radius:8px;">{{ message }}</div>
+    {% endfor %}
+
+    <section style="margin-bottom:2rem;">
+        <h2 style="color:#f0ede8;">Commentaires</h2>
+        {% if post.comments|length == 0 %}
+            <div style="padding:1rem; background:#1a1a22; color:#ddd; border-radius:8px;">Il n'y a pas encore de commentaire.</div>
+        {% else %}
+            <div style="display:flex; flex-direction:column; gap:.7rem;">
+                {% for comment in post.comments %}
+                    <div style="padding:.8rem; background:#111; border:1px solid #2a2a2e; border-radius:8px;">
+                        <strong style="color:#fff;">{{ comment.username }}</strong> <small style="color:#aaa;">{{ comment.createdAt ? comment.createdAt|date('d/m/Y H:i') : '' }}</small>
+                        <p style="margin:.3rem 0 0;">{{ comment.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+
+    <section style="background:#111; border:1px solid #2a2a2e; border-radius:10px; padding:1rem; max-width:700px;">
+        <h2 style="color:#f0ede8;">Ajouter un commentaire</h2>
+        {{ form_start(commentForm) }}
+            {{ form_row(commentForm.username) }}
+            {{ form_row(commentForm.content) }}
+            <button style="background:#635bff; color:#fff; border:none; padding:.5rem 1rem; border-radius:6px;">Envoyer</button>
+        {{ form_end(commentForm) }}
+    </section>
+{% endblock %}
