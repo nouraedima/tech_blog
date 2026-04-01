@@ -186,3 +186,71 @@ footer {
 }
 
 
+<section class="stages-section">
+    <h2 style="text-align: center; margin-top: 30px;">Nos Expériences Moto</h2>
+    
+    <div class="stages-container">
+        <article class="stage-card">
+            <img src="img/maniabilite.jpg" alt="Moto maniabilité">
+            <div class="stage-content">
+                <h3>Maniabilité & Équilibre</h3>
+                <p>Maîtrisez votre moto à basse vitesse : demi-tours, évitements et freinages d'urgence pour plus de sécurité au quotidien.</p>
+                <p><strong>Durée :</strong> 1 journée</p>
+            </div>
+        </article>
+
+        <article class="stage-card">
+            <img src="img/piste.jpg" alt="Moto sur piste">
+            <div class="stage-content">
+                <h3>Initiation Piste</h3>
+                <p>Découvrez les trajectoires et la position de conduite sur circuit sécurisé avec nos coachs diplômés d'État.</p>
+                <p><strong>Durée :</strong> 2 jours</p>
+            </div>
+        </article>
+
+        <article class="stage-card">
+            <img src="img/voyage.jpg" alt="Moto route">
+            <div class="stage-content">
+                <h3>Perfectionnement Route</h3>
+                <p>Améliorez votre lecture de trajectoire en virage et gagnez en confiance lors de vos sorties en groupe.</p>
+                <p><strong>Durée :</strong> 1/2 journée</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+<section class="contact-container">
+    <h2>Contactez RideNow</h2>
+    <p>Une question sur nos tarifs ou nos disponibilités ? Écrivez-nous.</p>
+
+    <form class="contact-form">
+        <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+
+        <div class="form-group">
+            <label for="stage">Stage souhaité</label>
+            <select id="stage" name="stage">
+                <option value="maniabilite">Maniabilité</option>
+                <option value="piste">Piste</option>
+                <option value="route">Route</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Envoyer la demande</button>
+    </form>
+</section>
+
+
