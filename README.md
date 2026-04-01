@@ -1,196 +1,188 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Mini-site</title>
-</head>
-
-<body>
-
-  <h1>Mon mini-site</h1>
-
-  <p class="intro">
-    Ceci est une page d’entraînement pour pratiquer le lien CSS, les class, les id et la notion parent/enfant.
-  </p>
-
-  <h2>Menu</h2>
-  <ul id="menu">
-    <li><a class="nav-link" href="#">Accueil</a></li>
-    <li><a class="nav-link" href="#">Services</a></li>
-    <li><a class="nav-link" href="#">Contact</a></li>
-  </ul>
-
-  <h2>Présentation</h2>
-  <div id="card">
-    <p id="important">
-      Ce paragraphe est spécial : on veut le styler différemment des autres.
-    </p>
-
-    <p>
-      Ce paragraphe est normal mais il est dans la carte.
-      On veut le différencier des paragraphes situés en dehors de la carte.
-    </p>
-
-    <a class="highlight" href="#">Voir plus</a>
-  </div>
-
-  <p>
-    Ce paragraphe est en dehors de la carte.
-    Il ne doit pas avoir le même style que les paragraphes dans la carte.
-  </p>
-
-  <img src="img/image.jpg" alt="Image de démonstration">
-
-</body>
-
-</html>
-
-html {
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  color: grey;
-  font-size: 60px;
-}
-
-h2 {
-  color: #cfcfcf;
-  font-size: 28px;
-}
-
-a {
-  color: red;
-  text-decoration: none;
-}
-
-.nav-link {
-  color: white;
-  font-weight: bold;
-}
-
-#card {
-  background-color: red;
-  border-radius: 10px;
-  width: 300px;
-  padding: 20px;
-  margin: 25px;
-}
-
-#card p {
-  color: black;
-  margin: 10px 0;
-}
-
-#card p#important {
-  margin: 0;
-  color: black;
-  font-weight: bold;
-}
-
-.highlight {
-  background-color: black;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-formulaire 
-<!DOCTYPE html>
-<html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Titre de la page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideNow | Accueil - Stages Moto</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- ========================= -->
-    <!-- HEADER : En-tête du site -->
-    <!-- ========================= -->
     <header>
-        <h1>Titre principal</h1>
-        <p>Introduction courte</p>
+        <nav class="navbar">
+            <div class="logo">Ride<span>Now</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="stages.html">Nos Stages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- ========================= -->
-    <!-- MAIN : Contenu principal -->
-    <!-- ========================= -->
     <main>
-
-        <section>
-            <h2>Premier bloc</h2>
-
-            <form action="#" method="get">
-                <!-- Champs du premier formulaire -->
-            </form>
+        <section class="hero">
+            <h1>Dominez la route avec RideNow</h1>
+            <p>Des coachings personnalisés pour tous les niveaux, du débutant au pistard confirmé.</p>
+            <a href="stages.html" class="btn">Découvrir nos stages</a>
         </section>
 
-        <section>
-            <h2>Deuxième bloc</h2>
-
-            <form action="#" method="post">
-                <!-- Champs du second formulaire -->
-            </form>
+        <section class="intro">
+            <h2>Pourquoi choisir RideNow ?</h2>
+            <p>Notre centre propose des expériences uniques pour améliorer votre sécurité et votre plaisir de conduite.</p>
         </section>
-
     </main>
 
-    <!-- ========================= -->
-    <!-- FOOTER : Pied de page -->
-    <!-- ========================= -->
     <footer>
-        <p>Pied de page</p>
+        <p>&copy; 2026 RideNow - Centre de perfectionnement moto. Tous droits réservés.</p>
     </footer>
 
 </body>
-
 </html>
 
-flexbox
-<hr>
 
-<h2>TP2</h2>
 
-<section id="tp2">
+------
+style.css
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <h3>Display</h3>
-    <div class="display-zone">
-        <div class="box">BOX 1</div>
-        <div class="box">BOX 2</div>
-        <div class="box">BOX 3</div>
-    </div>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
-    <h3>Position</h3>
-    <div class="promo-card">
-        <p class="promo-title">Offre spéciale</p>
-        <p>Le badge doit être placé dans le coin en haut à droite.</p>
-        <span class="badge">NEW</span>
-    </div>
+/* Header & Nav */
+header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <h3>Flexbox</h3>
-    <div class="services">
-        <div class="service-card">
-            <h4>Service 1</h4>
-            <p>Texte simple.</p>
-        </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        <div class="service-card">
-            <h4>Service 2</h4>
-            <p>Texte simple.</p>
-        </div>
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        <div class="service-card">
-            <h4>Service 3</h4>
-            <p>Texte simple.</p>
-        </div>
-    </div>
+.logo span { color: #e74c3c; }
 
-</section>
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+    color: #e74c3c;
+}
+
+/* Hero Section */
+.hero {
+    background: #2c3e50;
+    color: white;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 50px;
+}
+
+----stage html 
+/* Grille de stages */
+.stages-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.stage-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px); /* 3 colonnes par défaut */
+    display: flex;
+    flex-direction: column;
+}
+
+.stage-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.stage-content { padding: 15px; }
+
+
+---- fin fichier css
+/* Tablette */
+@media (max-width: 900px) {
+    .stage-card {
+        flex: 1 1 calc(50% - 20px); /* 2 colonnes */
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .stage-card {
+        flex: 1 1 100%; /* 1 seule colonne */
+    }
+    
+    .hero h1 { font-size: 1.5rem; }
+}
 
 
